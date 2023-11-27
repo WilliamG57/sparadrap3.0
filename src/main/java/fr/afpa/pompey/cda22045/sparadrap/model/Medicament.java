@@ -11,11 +11,18 @@ public class Medicament {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "medi_id")
     private long id;
-
+    @Column(name = "medi_nom")
     private String nom;
-    private CategorieMedicament categorieMedicament;
+    @Column(name = "medi_prix")
     private double prix;
+    @Column(name = "medi_miseenservice")
     private String miseEnService;
+    @Column(name = "medi_stock")
     private int stock;
+    @ManyToOne
+    @JoinColumn(name = "cat_id")
+    private CategorieMedi categorieMedicament;
+
 }

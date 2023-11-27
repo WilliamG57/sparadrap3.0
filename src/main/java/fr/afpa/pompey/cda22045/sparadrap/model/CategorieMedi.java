@@ -6,13 +6,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
-public class CategorieMedicament {
+@Table (name = "categorie")
+public class CategorieMedi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cat-id")
     private long id;
 
-    @Column(name = "cat_nom")
+    @Column(name = "cat_nom", columnDefinition = "VARCHAR(255)")
     private String categorie;
 }
