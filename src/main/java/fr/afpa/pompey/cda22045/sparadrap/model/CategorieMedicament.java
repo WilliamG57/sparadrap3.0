@@ -7,15 +7,12 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class Medicament {
+public class CategorieMedicament {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String nom;
-    private CategorieMedicament categorieMedicament;
-    private double prix;
-    private String miseEnService;
-    private int stock;
+    @Column(name = "cat_nom")
+    private String categorie;
 }
