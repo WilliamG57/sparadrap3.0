@@ -2,18 +2,19 @@ package fr.afpa.pompey.cda22045.sparadrap.model;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table
+@Entity
+@AllArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "per_id")
-    private long id;
+    private long per_id;
 
     @Column(name = "per_nom")
     private String nom;
@@ -35,4 +36,7 @@ public class Personne {
 
     @Column(name = "per_ville")
     private String ville;
+
+    public Personne() {
+    }
 }

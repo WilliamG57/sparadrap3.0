@@ -11,7 +11,7 @@ public class Mutuelle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long mut_id;
 
     private String nom;
 }

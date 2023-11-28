@@ -10,11 +10,10 @@ public class Medecin extends Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "med_id")
-    private long id;
+    private long med_id;
 
-    @ManyToOne
-    @JoinColumn(name = "per_id")
+    @OneToOne
+    @JoinColumn(name = "per_id", referencedColumnName = "id")
     private Personne personne;
 
     @Column(name = "med_agreement")
