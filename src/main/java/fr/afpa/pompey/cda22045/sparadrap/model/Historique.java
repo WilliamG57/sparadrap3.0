@@ -1,17 +1,23 @@
 package fr.afpa.pompey.cda22045.sparadrap.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Entity
-@Table(name = "Historique")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Historique {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long historique_id;
-
+    private Medecin medecin;
+    private Medicament medicament;
+    private Specialiste specialiste;
+    private String nom;
+    private String date;
+    private int quantite;
+    private double prix;
+    private Boolean Ordonnance;
 
 
 }

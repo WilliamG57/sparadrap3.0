@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="frame.HistoriqueFrame">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="fr.afpa.pompey.cda22045.sparadrap.frame.HistoriqueFrame">
   <grid id="27dc6" binding="historiquePanel" layout-manager="GridBagLayout">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>

@@ -3,7 +3,9 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
+import lombok.Getter;
 
+@Getter
 public class PanierService {
 
     Panier panier = new Panier();
@@ -18,15 +20,11 @@ public class PanierService {
         }
     }
 
-    public void ajoutPanier(String nom, String date, String medecin, String specialiste, Boolean Ordonnance) throws MyException {
+    public void ajoutPanier(String nom, String date, Medecin medecin, Specialiste specialiste, Boolean Ordonnance) throws MyException {
         validationDate(date);
         if (!panierDejaExistant()) {
             panier = new Panier(nom, date, medecin, specialiste, Ordonnance);
         }
-    }
-
-    public Panier getPanier() {
-        return panier;
     }
 
     private boolean panierDejaExistant() {
@@ -38,17 +36,19 @@ public class PanierService {
         return true;
     }
 
-    public void ajoutLigneArticle(String medicament, int quantite, String prix) throws MyException {
-        panier.getLigneArticles().add(new LigneArticle(medicament, quantite, prix));
+    public void ajoutLigneArticle(Medicament medicament, int quantite, double prix) throws MyException {
+        panier.getLigneArticles().add(new LigneArticle(medicament, prix, quantite));
     }
+
     public void supprimerPanier() {
-        this.panier=null;
+        this.panier = null;
         System.gc();
     }
 
-    private void validationQte (int quantite, String message) throws MyException{
+    private void validationQte(int quantite, String message) throws MyException {
 
     }
+
     private void validationDate(String date) throws MyException {
         DateManagment.parse(date, "La date n'est pas au bon format");
     }

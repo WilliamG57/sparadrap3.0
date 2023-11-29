@@ -11,8 +11,7 @@ public class CategorieMedi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cat-id")
-    private long id;
+    private long cat_id;
 
     @Column(name = "cat_nom", columnDefinition = "VARCHAR(255)")
     private String categorie;

@@ -2,18 +2,15 @@ package fr.afpa.pompey.cda22045.sparadrap.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "client")
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
 public class Client extends Personne {
+
     private long medecin_id;
     private long specialiste_id;
     private long mutuelle_id;
@@ -45,9 +42,6 @@ public class Client extends Personne {
     @JoinColumn(name = "spe_id")
     private Specialiste specialiste;
 
-    public Client() {
-        super();
-    }
 
     public Client(String nom, String prenom, String adresse, String codePostal, String ville,
                   String telephone, String email, String securiteSocial, String dateNaissance,

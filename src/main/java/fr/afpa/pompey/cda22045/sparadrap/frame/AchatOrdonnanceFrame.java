@@ -85,9 +85,9 @@ public class AchatOrdonnanceFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    panierService.ajoutPanier((String) comboClient.getSelectedItem(), textDate.getText(), (String) comboMedecin.getSelectedItem(),
-                            (String) comboSpecialiste.getSelectedItem(), Boolean.valueOf(textBoolean.getText()));
-                    panierService.ajoutLigneArticle((String) comboMedicament.getSelectedItem(), Integer.parseInt(textQuantite.getText()), textPrix.getText());
+                    panierService.ajoutPanier((String) comboClient.getSelectedItem(), textDate.getText(), (Medecin) comboMedecin.getSelectedItem(),
+                            (Specialiste) comboSpecialiste.getSelectedItem(), Boolean.valueOf(textBoolean.getText()));
+                    panierService.ajoutLigneArticle((Medicament) comboMedicament.getSelectedItem(), Integer.parseInt(textQuantite.getText()), textPrix.getX());
                 } catch (MyException ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                     throw new RuntimeException(ex);

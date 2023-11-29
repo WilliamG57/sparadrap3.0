@@ -3,6 +3,7 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
@@ -11,11 +12,8 @@ public class HistoriqueService {
     /**
      * Declaration de la liste contenant les historiques
      */
+    @Getter
     private static final ArrayList<Historique> historique = new ArrayList<>();
-
-    public static ArrayList<Historique> getHistorique() {
-        return historique;
-    }
 
     public HistoriqueService() {
     }

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.apache.log4j.builders.appender.SocketAppenderBuilder.LOGGER;
+//import static org.apache.log4j.builders.appender.SocketAppenderBuilder.LOGGER;
 
 public class MedecinDAO extends DAO<Medecin> {
 
@@ -36,8 +36,8 @@ public class MedecinDAO extends DAO<Medecin> {
                 newId = rs.getInt(1);
             }
         } catch (SQLException e) {
-            LOGGER.warn("RelationWithDB erreur : " + e.getMessage()
-                    + "[SQL error code : " + e.getSQLState() + "]");
+//            LOGGER.warn("RelationWithDB erreur : " + e.getMessage()
+//                    + "[SQL error code : " + e.getSQLState() + "]");
         }
         return newId;
     }

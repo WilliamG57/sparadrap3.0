@@ -59,7 +59,7 @@ public class CategorieMediDAO extends DAO<CategorieMedi> {
         CategorieMedi catMedi = null;
         while (resultSet.next()) {
             catMedi = new CategorieMedi();
-            catMedi.setCatId(resultSet.getInt("cat_id"));
+            catMedi.setCat_id(resultSet.getInt("cat_id"));
             catMedi.setCategorie(resultSet.getString("cat_categorie"));
         }
         categorieMedis.add(catMedi);

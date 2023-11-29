@@ -18,4 +18,5 @@ public class Medecin extends Personne {
 
     @Column(name = "med_agreement")
     private int numAgreement;
+
 }

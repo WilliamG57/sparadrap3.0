@@ -4,8 +4,7 @@ package fr.afpa.pompey.cda22045.sparadrap.frame;
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.service.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
-import service.HistoriqueService;
-import utils.MyException;
+
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;

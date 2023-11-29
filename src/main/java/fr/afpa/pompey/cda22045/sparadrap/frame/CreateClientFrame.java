@@ -2,6 +2,7 @@ package fr.afpa.pompey.cda22045.sparadrap.frame;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
+import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
 import fr.afpa.pompey.cda22045.sparadrap.service.*;
 import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 
@@ -90,7 +91,7 @@ public class CreateClientFrame extends JFrame {
                 long sId = ((Specialiste) selectItem2).getSpe_id();
                 try {
                     Client cl = getClients(muId, mId, sId);
-                    clientService.ajouterClient(cl);
+                    clientService.save(cl);
                     JOptionPane.showMessageDialog(null, "Nouveau client ajouté !");
                     dispose();
                     AccueilFrame.designAccueil();

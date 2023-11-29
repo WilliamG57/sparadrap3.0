@@ -68,7 +68,7 @@ public class AchatsFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     panierService.ajoutPanier((String) comboClient.getSelectedItem(), textDate.getText());
-                    panierService.ajoutLigneArticle((String) comboMedicament.getSelectedItem(), Integer.parseInt(textQuantite.getText()), textPrix.getText());
+                    panierService.ajoutLigneArticle((Medicament) comboMedicament.getSelectedItem(), Integer.parseInt(textQuantite.getText()), textPrix.getX());
                     JOptionPane.showMessageDialog(null, "Achat réalisé");
                 } catch (MyException ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
