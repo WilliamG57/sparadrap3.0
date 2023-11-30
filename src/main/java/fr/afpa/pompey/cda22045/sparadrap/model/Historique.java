@@ -18,6 +18,4 @@ public class Historique {
     private int quantite;
     private double prix;
     private Boolean Ordonnance;
-
-
 }

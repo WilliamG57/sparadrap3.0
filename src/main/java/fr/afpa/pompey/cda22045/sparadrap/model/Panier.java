@@ -18,10 +18,4 @@ public class Panier {
     private String nom;
     private String date;
     private Boolean ordonnance;
-
-    public Panier(String nom, String date) {
-    }
-
-    public Panier(String nom, String date, Medecin medecin, Specialiste specialiste, Boolean ordonnance) {
-    }
 }
