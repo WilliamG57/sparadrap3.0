@@ -2,9 +2,7 @@ package fr.afpa.pompey.cda22045.sparadrap.frame;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
-import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
 import fr.afpa.pompey.cda22045.sparadrap.service.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -41,12 +39,13 @@ public class CreateClientFrame extends JFrame {
     private JLabel specialisteClient;
 
     private ClientService clientService = new ClientService();
-    private MedecinService medecinService;
-    private SpecialisteService specialisteService;
-    private ClientDAO clientDAO = new ClientDAO();
-    private MedecinDAO medecinDAO = new MedecinDAO();
-    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
-    private MutuelleDAO mutuelleDAO = new MutuelleDAO();
+    private MedecinService medecinService = new MedecinService();
+    private SpecialisteService specialisteService = new SpecialisteService();
+    private MutuelleService mutuelleService = new MutuelleService();
+//    private ClientDAO clientDAO = new ClientDAO();
+//    private MedecinDAO medecinDAO = new MedecinDAO();
+//    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
+//    private MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
     public CreateClientFrame() throws Exception {
         try {
@@ -70,7 +69,7 @@ public class CreateClientFrame extends JFrame {
             comboSpecialiste.addItem(specialistes);
             comboSpecialiste.setSelectedIndex(-1);
         }
-        for (Mutuelle mutuelle : mutuelleDAO.findAll()) {
+        for (Mutuelle mutuelle : mutuelleService.getAllMutuelle()) {
             comboMutuelle.addItem(mutuelle);
             comboMutuelle.setSelectedIndex(-1);
         }

@@ -1,9 +1,6 @@
 package fr.afpa.pompey.cda22045.sparadrap.frame;
 
 
-import fr.afpa.pompey.cda22045.sparadrap.frame.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
-
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.event.ActionEvent;
@@ -101,7 +98,7 @@ public class AccueilFrame extends JFrame {
         btnQuitter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Singleton.closeInstanceDB();
+//                Singleton.closeInstanceDB();
                 dispose();
             }
         });

@@ -2,7 +2,6 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +16,10 @@ public class ClientService extends PersonneService {
 
     @Autowired
     private ClientRepository clientRepository;
-    ClientDAO clientDAO = new ClientDAO();
-    MedecinDAO medecinDAO = new MedecinDAO();
-    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
-    MutuelleDAO mutuelleDAO = new MutuelleDAO();
+//    ClientDAO clientDAO = new ClientDAO();
+//    MedecinDAO medecinDAO = new MedecinDAO();
+//    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
+//    MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
 
     public ClientService() {

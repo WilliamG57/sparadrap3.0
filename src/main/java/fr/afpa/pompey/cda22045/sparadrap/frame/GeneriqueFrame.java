@@ -4,7 +4,8 @@ import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
+import fr.afpa.pompey.cda22045.sparadrap.service.MedecinService;
+import fr.afpa.pompey.cda22045.sparadrap.service.SpecialisteService;
 
 public class GeneriqueFrame extends JFrame {
     private JPanel generiquePanel;
@@ -25,8 +26,10 @@ public class GeneriqueFrame extends JFrame {
     private JLabel Prenom;
     private JLabel Postal;
     private JLabel Ville;
-    private MedecinDAO medecinDAO = new MedecinDAO();
-    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
+    private MedecinService medecinService = new MedecinService();
+    private SpecialisteService specialisteService = new SpecialisteService();
+//    private MedecinDAO medecinDAO = new MedecinDAO();
+//    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
 
 
     public GeneriqueFrame(String nom, String type) throws Exception {
@@ -46,7 +49,7 @@ public class GeneriqueFrame extends JFrame {
 
     public void pourMedecin(String nomMedecin) throws Exception {
         textNom.setText(nomMedecin);
-        for (Medecin medecins : medecinDAO.findAll()) {
+        for (Medecin medecins : medecinService.getAllMedecin()) {
             if (medecins.getNom().equals(textNom.getText())) {
                 textPrenom.setText(medecins.getPrenom());
                 textAdresse.setText(medecins.getAdresse());
@@ -61,7 +64,7 @@ public class GeneriqueFrame extends JFrame {
 
     public void pourSpecialiste(String nomSpecialiste) throws Exception {
         textNom.setText(nomSpecialiste);
-        for (Specialiste specialiste : specialisteDAO.findAll()) {
+        for (Specialiste specialiste : specialisteService.getAllSpecialiste()) {
             if (specialiste.getNom().equals(textNom.getText())) {
                 labelMedecin.setText("Spécialiste");
                 Agreement.setText("Spécialité");

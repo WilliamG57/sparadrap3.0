@@ -4,11 +4,13 @@ package fr.afpa.pompey.cda22045.sparadrap.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Table
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
 
@@ -36,7 +38,4 @@ public class Personne {
 
     @Column(name = "per_ville")
     private String ville;
-
-    public Personne() {
-    }
 }

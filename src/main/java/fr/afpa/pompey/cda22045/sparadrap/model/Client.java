@@ -30,15 +30,15 @@ public class Client extends Personne {
     @JoinColumn(name = "per_id")
     private Personne personne;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "mut_id")
     private Mutuelle mutuelle;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "med_id")
     private Medecin medecin;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "spe_id")
     private Specialiste specialiste;
 

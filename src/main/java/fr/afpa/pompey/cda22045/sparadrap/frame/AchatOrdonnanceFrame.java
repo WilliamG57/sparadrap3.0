@@ -1,7 +1,6 @@
 package fr.afpa.pompey.cda22045.sparadrap.frame;
 
 import fr.afpa.pompey.cda22045.sparadrap.service.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
 
@@ -32,13 +31,12 @@ public class AchatOrdonnanceFrame extends JFrame {
     private JTextField textBoolean;
     private PanierService panierService = new PanierService();
     private ClientService clientService = new ClientService();
-    //private ClientService clientService;
-    private MedecinService medecinService;
-    private SpecialisteService specialisteService;
-    private MedicamentService medicamentService;
-    MedecinDAO medecinDAO = new MedecinDAO();
-    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
-    MedicamentDAO medicamentDAO = new MedicamentDAO();
+    private MedecinService medecinService = new MedecinService();
+    private SpecialisteService specialisteService = new SpecialisteService();
+    private MedicamentService medicamentService = new MedicamentService();
+//    MedecinDAO medecinDAO = new MedecinDAO();
+//    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
+//    MedicamentDAO medicamentDAO = new MedicamentDAO();
 
 
     public AchatOrdonnanceFrame() {
@@ -54,7 +52,7 @@ public class AchatOrdonnanceFrame extends JFrame {
         setContentPane(OrdonnancePanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        for (Client clients : clientService.findAll()) {
+        for (Client clients : clientService.getAllClients()) {
             comboClient.addItem(clients.getNom());
             comboClient.setSelectedIndex(-1);
         }

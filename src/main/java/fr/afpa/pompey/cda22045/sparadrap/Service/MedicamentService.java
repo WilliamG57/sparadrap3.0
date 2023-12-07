@@ -2,7 +2,6 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 import fr.afpa.pompey.cda22045.sparadrap.repository.MedicamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +14,8 @@ public class MedicamentService {
 
     @Autowired
     private MedicamentRepository medicamentRepository;
-    private MedicamentDAO medicamentDAO = new MedicamentDAO();
-    private CategorieMediDAO categorieMediDAO = new CategorieMediDAO();
+//    private MedicamentDAO medicamentDAO = new MedicamentDAO();
+//    private CategorieMediDAO categorieMediDAO = new CategorieMediDAO();
 
     public MedicamentService() {
     }

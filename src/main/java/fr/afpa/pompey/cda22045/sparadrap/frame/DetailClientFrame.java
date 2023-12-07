@@ -2,14 +2,12 @@ package fr.afpa.pompey.cda22045.sparadrap.frame;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.service.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 
 public class DetailClientFrame extends JFrame {
@@ -47,9 +45,9 @@ public class DetailClientFrame extends JFrame {
     private MedecinService medecinService = new MedecinService();
     private SpecialisteService specialisteService = new SpecialisteService();
     private MutuelleService mutuelleService = new MutuelleService();
-    private MedecinDAO medecinDAO = new MedecinDAO();
-    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
-    private MutuelleDAO mutuelleDAO = new MutuelleDAO();
+//    private MedecinDAO medecinDAO = new MedecinDAO();
+//    private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
+//    private MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
 
     public DetailClientFrame() throws Exception {
