@@ -1,15 +1,14 @@
 package fr.afpa.pompey.cda22045.sparadrap.service;
 
 
-import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.dao.*;
+import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,15 +17,12 @@ public class ClientService extends PersonneService {
 
     @Autowired
     private ClientRepository clientRepository;
-    PersonneDAO personneDAO = new PersonneDAO();
     ClientDAO clientDAO = new ClientDAO();
     MedecinDAO medecinDAO = new MedecinDAO();
     SpecialisteDAO specialisteDAO = new SpecialisteDAO();
     MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
-    //    public ClientService(ClientRepository clientRepository) {
-//        this.clientRepository = clientRepository;
-//    }
+
     public ClientService() {
     }
 
@@ -82,40 +78,40 @@ public class ClientService extends PersonneService {
         }
     }
 
-    public void ajouterClient(Client client) throws MyException, SQLException {
-        validate(client);
-        personneDAO.transactionCreate(client);
-    }
+//    public void ajouterClient(Client client) throws MyException, SQLException {
+//        validate(client);
+//        personneDAO.transactionCreate(client);
+//    }
 
-    public void supprimerClient(Client client) {
-        clientDAO.delete(client);
-    }
+//    public void supprimerClient(Client client) {
+//        clientDAO.delete(client);
+//    }
 
-    public void modifierClient(Client client) throws MyException, SQLException {
-        validate(client);
-        personneDAO.transactionUpdate(client);
-    }
+//    public void modifierClient(Client client) throws MyException, SQLException {
+//        validate(client);
+//        personneDAO.transactionUpdate(client);
+//    }
 
-    public List<Client> findAll() {
-        try {
-            List<Client> clients = clientDAO.findAll();
-            for (Client cl : clients) {
-                Medecin m = medecinDAO.find(cl.getMedecin_id());
-                if (m != null) {
-                    cl.setMedecin(m);
-                }
-                Specialiste s = specialisteDAO.find(cl.getSpecialiste_id());
-                if (s != null) {
-                    cl.setSpecialiste(s);
-                }
-                Mutuelle mut = mutuelleDAO.find(cl.getMutuelle_id());
-                if (mut != null) {
-                    cl.setMutuelle(mut);
-                }
-            }
-            return clients;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public List<Client> findAll() {
+//        try {
+//            List<Client> clients = clientDAO.findAll();
+//            for (Client cl : clients) {
+//                Medecin m = medecinDAO.find(cl.getMedecin_id());
+//                if (m != null) {
+//                    cl.setMedecin(m);
+//                }
+//                Specialiste s = specialisteDAO.find(cl.getSpecialiste_id());
+//                if (s != null) {
+//                    cl.setSpecialiste(s);
+//                }
+//                Mutuelle mut = mutuelleDAO.find(cl.getMutuelle_id());
+//                if (mut != null) {
+//                    cl.setMutuelle(mut);
+//                }
+//            }
+//            return clients;
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }

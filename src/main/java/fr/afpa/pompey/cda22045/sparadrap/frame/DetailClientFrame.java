@@ -44,6 +44,9 @@ public class DetailClientFrame extends JFrame {
     private JComboBox comboMutuelle;
     private boolean isNomEditable = false;
     private ClientService clientService = new ClientService();
+    private MedecinService medecinService = new MedecinService();
+    private SpecialisteService specialisteService = new SpecialisteService();
+    private MutuelleService mutuelleService = new MutuelleService();
     private MedecinDAO medecinDAO = new MedecinDAO();
     private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
     private MutuelleDAO mutuelleDAO = new MutuelleDAO();
@@ -64,19 +67,19 @@ public class DetailClientFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //TODO
 
-        for (Medecin medecins : medecinDAO.findAll()) {
+        for (Medecin medecins : medecinService.getAllMedecin()) {
             comboMedecin.addItem(medecins);
             comboMedecin.setSelectedIndex(-1);
         }
-        for (Specialiste specialistes : specialisteDAO.findAll()) {
+        for (Specialiste specialistes : specialisteService.getAllSpecialiste()) {
             comboSpecialiste.addItem(specialistes);
             comboSpecialiste.setSelectedIndex(-1);
         }
-        for (Mutuelle mutuelle : mutuelleDAO.findAll()) {
+        for (Mutuelle mutuelle : mutuelleService.getAllMutuelle()) {
             comboMutuelle.addItem(mutuelle);
             comboMutuelle.setSelectedIndex(-1);
         }
-        for (Client clients : clientService.findAll()) {
+        for (Client clients : clientService.getAllClients()) {
             listeClient.addItem(clients.getNom());
             listeClient.setSelectedIndex(-1);
             listeClient.addActionListener(new ActionListener() {
@@ -194,14 +197,10 @@ public class DetailClientFrame extends JFrame {
                 Object selectItem2 = comboSpecialiste.getSelectedItem();
                 long sId = ((Specialiste) selectItem2).getSpe_id();
                 if (isNomEditable == true) {
-                    try {
-                        Client cl = getClients(muId, mId, sId, perId);
-                        clientService.modifierClient(cl);
-                        JOptionPane.showMessageDialog(null, "Validé");
-                        isNomEditable = false;
-                    } catch (MyException | SQLException ex) {
-                        throw new RuntimeException(ex);
-                    }
+                    Client cl = getClients(muId, mId, sId, perId);
+                    clientService.updateClient(cl.getCli_id(), cl);
+                    JOptionPane.showMessageDialog(null, "Validé");
+                    isNomEditable = false;
                 }
                 isNomEditable = true;
             }

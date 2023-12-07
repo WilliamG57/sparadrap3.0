@@ -41,6 +41,8 @@ public class CreateClientFrame extends JFrame {
     private JLabel specialisteClient;
 
     private ClientService clientService = new ClientService();
+    private MedecinService medecinService;
+    private SpecialisteService specialisteService;
     private ClientDAO clientDAO = new ClientDAO();
     private MedecinDAO medecinDAO = new MedecinDAO();
     private SpecialisteDAO specialisteDAO = new SpecialisteDAO();
@@ -59,12 +61,12 @@ public class CreateClientFrame extends JFrame {
         setContentPane(createPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        for (Medecin medecins : medecinDAO.findAll()) {
+        for (Medecin medecins : medecinService.getAllMedecin()) {
             comboMedecin.addItem(medecins);
             comboMedecin.setSelectedIndex(-1);
         }
 
-        for (Specialiste specialistes : specialisteDAO.findAll()) {
+        for (Specialiste specialistes : specialisteService.getAllSpecialiste()) {
             comboSpecialiste.addItem(specialistes);
             comboSpecialiste.setSelectedIndex(-1);
         }

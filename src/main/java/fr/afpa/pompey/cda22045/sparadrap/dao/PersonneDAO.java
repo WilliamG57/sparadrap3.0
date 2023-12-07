@@ -6,17 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Savepoint;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonneDAO extends DAO<Personne> {
 
-    List<Personne> personness = new ArrayList<>();
-
-    public List<Personne> getPersonness() {
-        return personness;
-    }
+//    List<Personne> Personnes = new ArrayList<>();
+//
+//    public List<Personne> getPersonnes() {
+//        return Personnes;
+//    }
 
     @Override
     public int create(Personne obj) {
@@ -96,44 +95,44 @@ public class PersonneDAO extends DAO<Personne> {
         return null;
     }
 
-    public void transactionCreate(Personne obj) throws SQLException {
-        ClientDAO clientDao = new ClientDAO();
-        Client clients = new Client();
-        Specialiste specialistes = new Specialiste();
-        Medecin medecins = new Medecin();
-        Savepoint save = null;
-        try {
-            connect.setAutoCommit(false);
-            save = connect.setSavepoint("depart");
-            // creation
-            int pId = this.create(obj);
-            obj.setPer_id(pId);
-            Boolean creerClient = clients instanceof Client;
-            Boolean creerMedecin = medecins instanceof Medecin;
-            Boolean creerSpecialiste = specialistes instanceof Specialiste;
-            clientDao.create((Client) obj);
-            connect.commit();
-            connect.setAutoCommit(true);
-        } catch (SQLException sqle) {
-            connect.rollback(save);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public void transactionCreate(Personne obj) throws SQLException {
+//        ClientDAO clientDao = new ClientDAO();
+//        Client clients = new Client();
+//        Specialiste specialistes = new Specialiste();
+//        Medecin medecins = new Medecin();
+//        Savepoint save = null;
+//        try {
+//            connect.setAutoCommit(false);
+//            save = connect.setSavepoint("depart");
+//            // creation
+//            int pId = this.create(obj);
+//            obj.setPer_id(pId);
+//            Boolean creerClient = clients instanceof Client;
+//            Boolean creerMedecin = medecins instanceof Medecin;
+//            Boolean creerSpecialiste = specialistes instanceof Specialiste;
+//            clientDao.create((Client) obj);
+//            connect.commit();
+//            connect.setAutoCommit(true);
+//        } catch (SQLException sqle) {
+//            connect.rollback(save);
+//        } catch (ParseException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
-    public void transactionUpdate(Personne obj) throws SQLException {
-        ClientDAO clientDAO = new ClientDAO();
-        Savepoint save = null;
-        try {
-            connect.setAutoCommit(false);
-            save = connect.setSavepoint("départ");
-            clientDAO.update((Client) obj);
-            connect.commit();
-            connect.setAutoCommit(true);
-        } catch (SQLException sqle) {
-            connect.rollback(save);
-        }
-    }
+//    public void transactionUpdate(Personne obj) throws SQLException {
+//        ClientDAO clientDAO = new ClientDAO();
+//        Savepoint save = null;
+//        try {
+//            connect.setAutoCommit(false);
+//            save = connect.setSavepoint("départ");
+//            clientDAO.update((Client) obj);
+//            connect.commit();
+//            connect.setAutoCommit(true);
+//        } catch (SQLException sqle) {
+//            connect.rollback(save);
+//        }
+//    }
 }
 
 

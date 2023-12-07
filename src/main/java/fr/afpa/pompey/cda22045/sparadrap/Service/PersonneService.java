@@ -2,13 +2,12 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
-import fr.afpa.pompey.cda22045.sparadrap.dao.*;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class PersonneService {
-    private Personne personnes;
-    private PersonneDAO personneDAO = new PersonneDAO();
+    private Personne personne;
 
     public PersonneService() {
     }

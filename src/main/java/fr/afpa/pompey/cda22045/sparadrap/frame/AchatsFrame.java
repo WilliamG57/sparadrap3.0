@@ -29,7 +29,7 @@ public class AchatsFrame extends JFrame {
     private JTextField textBoolean;
     private ClientDAO clientDAO = new ClientDAO();
     private MedicamentDAO medicamentDAO = new MedicamentDAO();
-
+    private MedicamentService medicamentService;
     private PanierService panierService = new PanierService();
 
 
@@ -50,7 +50,7 @@ public class AchatsFrame extends JFrame {
             comboClient.addItem(clients.getNom());
             comboClient.setSelectedIndex(-1);
         }
-        for (Medicament medicaments : medicamentDAO.findAll()) {
+        for (Medicament medicaments : medicamentService.getAllMedicament()) {
             comboMedicament.addItem(medicaments.getNom());
             comboMedicament.setSelectedIndex(-1);
             comboMedicament.addActionListener(new ActionListener() {

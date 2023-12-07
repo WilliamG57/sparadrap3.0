@@ -13,9 +13,22 @@ public class Panier {
 
     private ArrayList<LigneArticle> ligneArticles = new ArrayList<>();
 
-    private Medecin medecin;
-    private Specialiste specialiste;
     private String nom;
     private String date;
+    private Medecin medecin;
+    private Specialiste specialiste;
     private Boolean ordonnance;
+
+    public Panier(String nom, String date,Medecin medecin, Specialiste specialiste,  Boolean ordonnance) {
+        this.nom = nom;
+        this.date = date;
+        this.medecin = medecin;
+        this.specialiste = specialiste;
+        this.ordonnance = ordonnance;
+    }
+
+    public Panier(String nom, String date) {
+        this.nom = nom;
+        this.date = date;
+    }
 }
