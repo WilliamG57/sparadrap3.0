@@ -4,12 +4,12 @@ package fr.afpa.pompey.cda22045.sparadrap.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "client")
+@EqualsAndHashCode(callSuper = true)
 public class Client extends Personne {
 
     private long medecin_id;
