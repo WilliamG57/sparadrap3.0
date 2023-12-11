@@ -21,7 +21,6 @@ public class ClientService extends PersonneService {
 //    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
 //    MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
-
     public ClientService() {
     }
 
@@ -40,7 +39,7 @@ public class ClientService extends PersonneService {
 
     public Client updateClient(Long id, Client updatedClient) {
         if (clientRepository.existsById(id)) {
-            updatedClient.setCli_id(id);
+            updatedClient.setPer_id(id);
             return clientRepository.save(updatedClient);
         } else {
             // Gérer le cas où le client n'existe pas

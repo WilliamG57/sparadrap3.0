@@ -91,7 +91,7 @@ public class DetailClientFrame extends JFrame {
                         } catch (Exception ex) {
                             throw new RuntimeException(ex);
                         }
-                        textId.setText(String.valueOf(clients.getPersonne().getPer_id()));
+                        textId.setText(String.valueOf(clients.getPer_id()));
                         textTelephone.setText(clients.getTelephone());
                         textMail.setText(clients.getEmail());
                         textAdresse.setText(clients.getAdresse());
@@ -191,12 +191,12 @@ public class DetailClientFrame extends JFrame {
                 Object selectItem = comboMutuelle.getSelectedItem();
                 long muId = ((Mutuelle) selectItem).getMut_id();
                 Object selectItem1 = comboMedecin.getSelectedItem();
-                long mId = ((Medecin) selectItem1).getMed_id();
+                long mId = ((Medecin) selectItem1).getPer_id();
                 Object selectItem2 = comboSpecialiste.getSelectedItem();
-                long sId = ((Specialiste) selectItem2).getSpe_id();
+                long sId = ((Specialiste) selectItem2).getPer_id();
                 if (isNomEditable == true) {
                     Client cl = getClients(muId, mId, sId, perId);
-                    clientService.updateClient(cl.getCli_id(), cl);
+                    clientService.updateClient(cl.getPer_id(), cl);
                     JOptionPane.showMessageDialog(null, "Validé");
                     isNomEditable = false;
                 }

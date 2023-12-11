@@ -31,7 +31,7 @@ public class SpecialisteService {
 
     public Specialiste updatedSpecialiste(Long id, Specialiste updatedSpecialiste) {
         if (specialisteRepository.existsById(id)) {
-            updatedSpecialiste.setSpe_id(id);
+            updatedSpecialiste.setPer_id(id);
             return specialisteRepository.save(updatedSpecialiste);
         } else {
             // Gérer le cas où le specialiste n'existe pas

@@ -14,15 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Medecin extends Personne {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long med_id;
-
-    @ManyToOne
-    @JoinColumn(name = "per_id")
-    private Personne personne;
-
     @Column(name = "med_agreement")
     private int numAgreement;
-
 }
