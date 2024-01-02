@@ -42,7 +42,6 @@ public class ClientService extends PersonneService {
             updatedClient.setPer_id(id);
             return clientRepository.save(updatedClient);
         } else {
-            // Gérer le cas où le client n'existe pas
             return null;
         }
     }

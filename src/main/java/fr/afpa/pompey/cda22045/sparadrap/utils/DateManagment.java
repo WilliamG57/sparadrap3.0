@@ -29,7 +29,6 @@ public class DateManagment {
             throw new RuntimeException(e);
         }
         result = new java.sql.Date(tampon.getTime());
-        System.out.println(result);
         return result;
     }
 }
