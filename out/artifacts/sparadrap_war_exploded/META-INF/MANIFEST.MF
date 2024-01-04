@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: User-09
+Build-Jdk: 17.0.9
+Implementation-Title: sparadrap
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: fr.afpa.pompey.cda22045
+Main-Class: ${start-class}
+
