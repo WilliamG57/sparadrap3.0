@@ -11,8 +11,7 @@
     <title>Accueil</title>
 </head>
 <body>
-
-<h1>Test</h1>
-<p>Test test test</p>
+<%@include file="header.jsp"%>
+<%@include file="menu.jsp"%>
 </body>
 </html>
