@@ -13,8 +13,8 @@
 </head>
 <body>
 <header>
-    <img src="images/Logo.png" alt="logo de la pharmacie" class="logo"/>
-    <h1 class="title">Pharmacie Sparadrap</h1>
+    <img src="images/logo-sparadrap.png" alt="logo de la pharmacie" class="logo"/>
+    <h1 class="title">Pharmacie Sparadrap </h1>
 </header>
 </body>
 </html>

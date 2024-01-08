@@ -12,11 +12,13 @@
     <title>Title</title>
 </head>
 <body>
-<ul class="list_menu">
-    <li>Clients</li>
-    <li>Médicaments</li>
-    <li>Ordonnances</li>
-    <li>Historiques</li>
-</ul>
+<aside class="menu">
+    <ul class="list_menu">
+        <li class="list_menu_choice">Clients</li>
+        <li class="list_menu_choice">Médicaments</li>
+        <li class="list_menu_choice">Ordonnances</li>
+        <li class="list_menu_choice">Historiques</li>
+    </ul>
+</aside>
 </body>
 </html>

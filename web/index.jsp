@@ -13,5 +13,6 @@
 <body>
 <%@include file="header.jsp"%>
 <%@include file="menu.jsp"%>
+<%@include file="client.jsp"%>
 </body>
 </html>

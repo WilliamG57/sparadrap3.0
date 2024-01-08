@@ -4,6 +4,7 @@ li{
 img{
     height: 200px;
     width: 200px;
+
 }
 header{
     display: flex;
@@ -14,4 +15,25 @@ header{
         color: green;
         margin-left: 150px;
     }
+}
+
+aside{
+    width: 200px;
+}
+.menu{
+    background-color: #a19999;
+}
+.list_menu{
+    margin: 0;
+    width: 150px;
+    padding: 15px 0 15px 20px;
+}
+.list_menu_choice{
+    display: flex;
+    justify-content: center;
+    border: gray solid 1px;
+    border-radius: 20px;
+    background-color: gray;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 20px;
 }
