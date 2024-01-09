@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MedecinService extends PersonneService{
+public class MedecinService extends PersonneService {
 
     @Autowired
     private MedecinRepository medecinRepository;
 
-    public MedecinService(){
+    public MedecinService() {
 
     }
 

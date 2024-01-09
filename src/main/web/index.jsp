@@ -6,13 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+
 <html>
 <head>
+    <link rel="stylesheet" href="CSS/style.css"/>
     <title>Accueil</title>
 </head>
 <body>
 <%@include file="header.jsp"%>
 <%@include file="menu.jsp"%>
-<%@include file="client.jsp"%>
+<%@include file="medecin.jsp"%>
 </body>
 </html>

@@ -37,3 +37,8 @@ aside{
     padding: 5px 15px 5px 15px;
     margin-bottom: 20px;
 }
+
+.info_client{
+    display: flex;
+    justify-content: space-between;
+}

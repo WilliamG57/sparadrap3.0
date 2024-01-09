@@ -12,11 +12,6 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = true)
 public class Client extends Personne {
 
-    private long medecin_id;
-    private long specialiste_id;
-    private long mutuelle_id;
-
-
     @Column(name = "cli_secu")
     private String secuSociale;
 
