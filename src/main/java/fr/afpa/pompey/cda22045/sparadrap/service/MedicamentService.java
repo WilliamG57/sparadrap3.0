@@ -14,8 +14,6 @@ public class MedicamentService {
 
     @Autowired
     private MedicamentRepository medicamentRepository;
-//    private MedicamentDAO medicamentDAO = new MedicamentDAO();
-//    private CategorieMediDAO categorieMediDAO = new CategorieMediDAO();
 
     public MedicamentService() {
     }
