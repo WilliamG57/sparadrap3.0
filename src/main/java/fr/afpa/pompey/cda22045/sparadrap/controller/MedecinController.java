@@ -19,6 +19,7 @@ public class MedecinController {
     public String showMedecin(Model model) {
         List<Medecin> medecins = medecinService.getAllMedecin();
         model.addAttribute("medecins", medecins);
+        System.out.println("hello world");
         return "medecin";
     }
 }

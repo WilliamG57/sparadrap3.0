@@ -2,14 +2,43 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
+import fr.afpa.pompey.cda22045.sparadrap.repository.PersonneRepository;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonneService {
-    private Personne personne;
+
+    @Autowired
+    private PersonneRepository personneRepository;
 
     public PersonneService() {
+    }
+
+    public Personne save(Personne personne) {
+        return personneRepository.save(personne);
+    }
+
+    public Optional<Personne> getPersonneById(Long id) {
+        return personneRepository.findById(id);
+    }
+
+    public List<Personne> getAllPersonne() {
+        return personneRepository.findAll();
+    }
+
+    public Personne updatedPersonne(Long id, Personne updatedPersonne) {
+        if (personneRepository.existsById(id)) {
+            updatedPersonne.setPer_id(id);
+            return personneRepository.save(updatedPersonne);
+        } else {
+            // Gérer le cas où la personne n'existe pas
+            return null;
+        }
     }
 
     public void ajouterPersonne(Personne personnes) throws MyException {

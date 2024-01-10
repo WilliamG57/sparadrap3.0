@@ -22,7 +22,7 @@ public class MedecinService extends PersonneService {
         return medecinRepository.save(medecin);
     }
 
-    public Optional<Medecin> getClientById(Long id) {
+    public Optional<Medecin> getMedecinById(Long id) {
         return medecinRepository.findById(id);
     }
 
