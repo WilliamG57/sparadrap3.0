@@ -1,0 +1,17 @@
+.footer {
+  background-color: #a19999;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-item {
+  margin: 10px 0;
+}

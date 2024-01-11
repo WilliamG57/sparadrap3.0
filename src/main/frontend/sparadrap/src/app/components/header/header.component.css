@@ -1,14 +1,17 @@
 img{
-  height: 200px;
-  width: 200px;
+  height: 203px;
+  width: 209px;
+  border-radius: 20px 0 0 0;
 }
 header{
   display: flex;
+  align-items: center;
+  height: 200px;
   background-color: #a19999;
   border-radius: 20px;
-  align-items: center;
   h1{
     color: green;
-    margin-left: 150px;
+    font-size: 70px;
+    margin-left: 25%;
   }
 }

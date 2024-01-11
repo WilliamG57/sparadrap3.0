@@ -1,0 +1,39 @@
+.menu {
+  background-color: #f2f2f2;
+  padding: 10px 0;
+}
+
+.list_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 50px 0;
+}
+
+.list_menu_choice {
+  margin: 0 15px;
+  text-align: center;
+  background-color: #a19999;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+.list_menu_choice a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.list_menu_choice svg {
+  fill: green;
+  margin-bottom: 5px;
+}
+
+.list_menu_choice:hover {
+  background-color: #ddd;
+}
+
+.title_choice {
+  font-size: 20px;
+  margin: 5px 0 0;
+}
