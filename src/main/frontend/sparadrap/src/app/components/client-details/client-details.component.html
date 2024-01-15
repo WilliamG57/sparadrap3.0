@@ -1,10 +1,10 @@
+
+
+
 <h1>Sélectionner une personne</h1>
 <label for="personne">Choisir une personne :</label>
-<select id="personne">
-  <option value="personne1">Personne 1</option>
-  <option value="personne2">Personne 2</option>
-  <option value="personne3">Personne 3</option>
-  <!-- Ajoutez d'autres options si nécessaire -->
+<select [(ngModel)]="selectedClient" (change)="onClientSelect()" id="personne">
+<option *ngFor="let client of clients" [value]="client.id">{{client.nom}}</option>
 </select>
 
 <h2>Informations sur la personne sélectionnée :</h2>

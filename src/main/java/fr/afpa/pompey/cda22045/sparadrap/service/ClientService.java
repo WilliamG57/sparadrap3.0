@@ -74,41 +74,4 @@ public class ClientService extends PersonneService {
             throw new MyException("Merci de mettre un numéro de sécurité sociale");
         }
     }
-
-//    public void ajouterClient(Client client) throws MyException, SQLException {
-//        validate(client);
-//        personneDAO.transactionCreate(client);
-//    }
-
-//    public void supprimerClient(Client client) {
-//        clientDAO.delete(client);
-//    }
-
-//    public void modifierClient(Client client) throws MyException, SQLException {
-//        validate(client);
-//        personneDAO.transactionUpdate(client);
-//    }
-
-//    public List<Client> findAll() {
-//        try {
-//            List<Client> clients = clientDAO.findAll();
-//            for (Client cl : clients) {
-//                Medecin m = medecinDAO.find(cl.getMedecin_id());
-//                if (m != null) {
-//                    cl.setMedecin(m);
-//                }
-//                Specialiste s = specialisteDAO.find(cl.getSpecialiste_id());
-//                if (s != null) {
-//                    cl.setSpecialiste(s);
-//                }
-//                Mutuelle mut = mutuelleDAO.find(cl.getMutuelle_id());
-//                if (mut != null) {
-//                    cl.setMutuelle(mut);
-//                }
-//            }
-//            return clients;
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 }
