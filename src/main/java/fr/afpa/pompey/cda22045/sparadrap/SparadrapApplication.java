@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SparadrapApplication {
 
 	public static void main(String[] args) {
-		AccueilFrame.designAccueil();
 		SpringApplication.run(SparadrapApplication.class, args);
 	}
 }

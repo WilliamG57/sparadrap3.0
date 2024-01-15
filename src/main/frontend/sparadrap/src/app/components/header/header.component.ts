@@ -10,7 +10,7 @@ import {NgOptimizedImage} from "@angular/common";
     NgOptimizedImage
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
 
