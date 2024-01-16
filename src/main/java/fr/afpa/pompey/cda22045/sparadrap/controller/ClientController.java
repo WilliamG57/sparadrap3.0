@@ -3,9 +3,8 @@ package fr.afpa.pompey.cda22045.sparadrap.controller;
 import fr.afpa.pompey.cda22045.sparadrap.model.Client;
 import fr.afpa.pompey.cda22045.sparadrap.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +20,18 @@ public class ClientController {
         return clientService.getAllClients();
     }
 
+    @PutMapping("/{id}")
+    public Client updateClient(@PathVariable Long id, @RequestBody Client updatedClient) {
+        return clientService.updateClient(id, updatedClient);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteClient(@PathVariable Long id) {
+        boolean isRemoved = clientService.deleteClient(id);
+
+        if (!isRemoved) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().build();
+    }
 }

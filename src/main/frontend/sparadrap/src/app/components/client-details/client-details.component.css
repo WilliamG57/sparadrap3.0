@@ -1,4 +1,3 @@
-/* Style de base pour le corps de la page */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -6,17 +5,14 @@ body {
   background-color: #f0f0f0;
 }
 
-/* Style pour le titre principal */
 h1 {
   color: #333;
 }
 
-/* Style pour le label du select */
 label {
   font-weight: bold;
 }
 
-/* Style pour le select */
 select {
   width: 100%;
   padding: 10px;
@@ -27,7 +23,6 @@ select {
   color: #333;
 }
 
-/* Style pour les champs d'informations */
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -39,16 +34,15 @@ input[type="text"] {
   transition: border-color 0.3s;
 }
 
-/* Style pour les champs d'informations en mode désactivé */
 input[type="text"][disabled] {
   background-color: #eee;
   border-color: #eee;
 }
 
-/* Style pour le bouton */
 button {
   padding: 10px 20px;
-  background-color: #007bff;
+  margin: 10px 20px;
+  background-color: #a19999;
   color: #fff;
   border: none;
   border-radius: 4px;

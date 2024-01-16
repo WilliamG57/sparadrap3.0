@@ -1,15 +1,21 @@
 <h1>Sélectionner une personne</h1>
 <label for="personne">Choisir une personne :</label>
-<select [(ngModel)]="selectedClient" (change)="onClientSelect()" id="personne">
-<option *ngFor="let client of clients" [value]="client.id">{{client.nom}}</option>
+<select [(ngModel)]="selectedClientId" (change)="onClientSelect()" id="personne">
+  <option *ngFor="let client of clients" [value]="client.per_id">{{ client.nom }} {{client.prenom}}</option>
 </select>
 
 <h2>Informations sur la personne sélectionnée :</h2>
 <label for="nom">Nom :</label>
-<input type="text" id="nom" [(ngModel)]="selectedClient.nom" >
+<input type="text" id="nom" [(ngModel)]="selectedClient.nom" [disabled]="!isEditable">
 <br>
 <label for="prenom">Prénom :</label>
-<input type="text" id="prenom" [(ngModel)]="selectedClient.prenom" >
+<input type="text" id="prenom" [(ngModel)]="selectedClient.prenom" [disabled]="!isEditable">
 <br>
 <label for="adresse">Adresse :</label>
-<input type="text" id="adresse"  [(ngModel)]="selectedClient.adresse" >
+<input type="text" id="adresse" [(ngModel)]="selectedClient.adresse"
+       [disabled]="!isEditable">
+
+<button (click)="modifyClient()">Modifier</button>
+<!--<button (click)="deleteClient()">Supprimer</button>-->
+<button (click)="saveClient()" *ngIf="isEditable">Sauvegarder</button>
+

@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
 import {RouterLink} from "@angular/router";
+import {NgIf} from "@angular/common";
+import {MenuService} from "../../services/menu.service";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [
     HeaderComponent,
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
 
+  constructor(public menuService: MenuService) {
+  }
 }

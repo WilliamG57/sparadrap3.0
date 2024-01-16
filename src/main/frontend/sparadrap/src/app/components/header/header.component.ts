@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {NgOptimizedImage} from "@angular/common";
+import {MenuService} from "../../services/menu.service";
 
 @Component({
   selector: 'app-header',
@@ -13,5 +14,6 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  constructor(public menuService: MenuService) {
+  }
 }

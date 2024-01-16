@@ -16,10 +16,6 @@ public class ClientService extends PersonneService {
 
     @Autowired
     private ClientRepository clientRepository;
-//    ClientDAO clientDAO = new ClientDAO();
-//    MedecinDAO medecinDAO = new MedecinDAO();
-//    SpecialisteDAO specialisteDAO = new SpecialisteDAO();
-//    MutuelleDAO mutuelleDAO = new MutuelleDAO();
 
     public ClientService() {
     }
@@ -45,6 +41,15 @@ public class ClientService extends PersonneService {
             return null;
         }
     }
+
+    public boolean deleteClient(Long id) {
+        if (clientRepository.existsById(id)) {
+            clientRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 
     public void validate(Client client) throws MyException {
         validateSecuriteSociale(client.getSecuSociale());
