@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
 import {RouterLink} from "@angular/router";
 import {NgIf} from "@angular/common";
-import {MenuService} from "../../services/menu.service";
+import {MenuService} from "../../services/menu-service/menu.service";
 
 @Component({
   selector: 'app-menu',
@@ -18,5 +18,11 @@ import {MenuService} from "../../services/menu.service";
 export class MenuComponent {
 
   constructor(public menuService: MenuService) {
+  }
+
+  showSubMenu = false;
+
+  toggleSubMenu(): void {
+    this.showSubMenu = !this.showSubMenu;
   }
 }

@@ -29,13 +29,21 @@ public class SpecialisteService {
         return specialisteRepository.findAll();
     }
 
-    public Specialiste updatedSpecialiste(Long id, Specialiste updatedSpecialiste) {
+    public Specialiste updateSpecialiste(Long id, Specialiste updateSpecialiste) {
         if (specialisteRepository.existsById(id)) {
-            updatedSpecialiste.setPer_id(id);
-            return specialisteRepository.save(updatedSpecialiste);
+            updateSpecialiste.setPer_id(id);
+            return specialisteRepository.save(updateSpecialiste);
         } else {
             // Gérer le cas où le specialiste n'existe pas
             return null;
         }
+    }
+
+    public boolean deleteSpecialiste(Long id) {
+        if (specialisteRepository.existsById(id)) {
+            specialisteRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

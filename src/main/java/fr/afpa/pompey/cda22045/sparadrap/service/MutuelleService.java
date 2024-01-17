@@ -14,13 +14,14 @@ public class MutuelleService {
     @Autowired
     private MutuelleRepository mutuelleRepository;
 
-    public MutuelleService (){}
+    public MutuelleService() {
+    }
 
     public Mutuelle save(Mutuelle mutuelle) {
         return mutuelleRepository.save(mutuelle);
     }
 
-    public Optional<Mutuelle> getClientById(Long id) {
+    public Optional<Mutuelle> getMutuelleById(Long id) {
         return mutuelleRepository.findById(id);
     }
 
@@ -28,13 +29,21 @@ public class MutuelleService {
         return mutuelleRepository.findAll();
     }
 
-    public Mutuelle updatedMutuelle(Long id, Mutuelle updatedMutuelle) {
+    public Mutuelle updateMutuelle(Long id, Mutuelle updateMutuelle) {
         if (mutuelleRepository.existsById(id)) {
-            updatedMutuelle.setMut_id(id);
-            return mutuelleRepository.save(updatedMutuelle);
+            updateMutuelle.setMut_id(id);
+            return mutuelleRepository.save(updateMutuelle);
         } else {
             // Gérer le cas où la mutuelle n'existe pas
             return null;
         }
+    }
+
+    public boolean deleteMutuelle(Long id) {
+        if (mutuelleRepository.existsById(id)) {
+            mutuelleRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

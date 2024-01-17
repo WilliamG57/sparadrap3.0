@@ -1,5 +1,5 @@
 import {Component, OnInit, signal} from '@angular/core';
-import {ClientService} from '../../services/client.service';
+import {ClientService} from '../../services/client-service/client.service';
 import {FormsModule} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 import {error} from "@angular/compiler-cli/src/transformers/util";

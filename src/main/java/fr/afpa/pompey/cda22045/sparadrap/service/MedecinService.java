@@ -30,13 +30,21 @@ public class MedecinService extends PersonneService{
         return medecinRepository.findAll();
     }
 
-    public Medecin updatedMedecin(Long id, Medecin updatedMedecin) {
+    public Medecin updateMedecin(Long id, Medecin updateMedecin) {
         if (medecinRepository.existsById(id)) {
-            updatedMedecin.setPer_id(id);
-            return medecinRepository.save(updatedMedecin);
+            updateMedecin.setPer_id(id);
+            return medecinRepository.save(updateMedecin);
         } else {
             // Gérer le cas où le medecin n'existe pas
             return null;
         }
+    }
+
+    public boolean deleteMedecin(Long id) {
+        if (medecinRepository.existsById(id)) {
+            medecinRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
