@@ -1,0 +1,12 @@
+
+
+<div class="meteo-container">
+  <h2>Recherche Météo</h2>
+  <form class="meteo-form" (submit)="searchAddress()">
+    <input type="text" id="ville" name="ville" [(ngModel)]="ville" placeholder="Entrez le nom de la ville">
+    <button type="submit">Rechercher</button>
+  </form>
+  <div class="meteo-result">
+    <!-- Les résultats de la météo seront affichés ici -->
+  </div>
+</div>
