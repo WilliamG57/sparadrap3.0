@@ -2,7 +2,6 @@ import {Component, OnInit, signal} from '@angular/core';
 import {ClientService} from '../../services/client-service/client.service';
 import {FormsModule} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
-import {error} from "@angular/compiler-cli/src/transformers/util";
 
 
 @Component({
@@ -43,12 +42,12 @@ export class ClientDetailsComponent implements OnInit {
     }
   }
 
-  //Modification d'un client
+  //Possibilité de modifier un client
   modifyClient(): void {
     this.isEditable = true;
   }
 
-  //Sauvegarde des modification
+  //Sauvegarde des modifications
   saveClient(): void {
     this.clientService.updateClient(this.selectedClient).subscribe({
       next: (response) => {

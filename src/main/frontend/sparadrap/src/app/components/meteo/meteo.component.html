@@ -1,5 +1,3 @@
-
-
 <div class="meteo-container">
   <h2>Recherche Météo</h2>
   <form class="meteo-form" (submit)="searchAddress()">
@@ -7,6 +5,9 @@
     <button type="submit">Rechercher</button>
   </form>
   <div class="meteo-result">
-    <!-- Les résultats de la météo seront affichés ici -->
+    <div *ngIf="weatherData">
+      <p>Température: {{ weatherData.main.temp }} °C</p>
+      <p>Conditions: {{ weatherData.weather[0].description }}</p>
+    </div>
   </div>
 </div>

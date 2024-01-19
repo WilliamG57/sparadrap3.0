@@ -1,5 +1,4 @@
 <form class="client-form">
-  <!-- Champs de Personne -->
   <div class="form-group">
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom">
@@ -35,7 +34,6 @@
     <input type="text" id="ville" name="ville">
   </div>
 
-  <!-- Champs de Client -->
   <div class="form-group">
     <label for="secuSociale">Numéro de Sécurité Sociale</label>
     <input type="text" id="secuSociale" name="secuSociale">
@@ -46,25 +44,23 @@
     <input type="date" id="dateNaissance" name="dateNaissance">
   </div>
 
-  <!-- Sélections pour médecin, spécialiste et mutuelle -->
   <div class="form-group">
     <label for="medecin">Médecin</label>
     <select id="medecin" name="medecin">
-      <!-- Options pour médecin -->
+      <option *ngFor="let medecin of medecins" [value]="medecin.per_id">{{ medecin.nom }}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="specialiste">Spécialiste</label>
     <select id="specialiste" name="specialiste">
-      <!-- Options pour spécialiste -->
+      <option *ngFor="let specialiste of specialistes" [value]="specialiste.per_id">{{ specialiste.nom }}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="mutuelle">Mutuelle</label>
     <select id="mutuelle" name="mutuelle">
-      <!-- Options pour mutuelle -->
     </select>
   </div>
 
