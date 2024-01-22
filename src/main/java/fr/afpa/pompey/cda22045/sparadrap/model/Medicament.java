@@ -23,9 +23,6 @@ public class Medicament {
     @Column(name = "medi_prix")
     private double prix;
 
-    @Column(name = "medi_miseenservice")
-    private String miseEnService;
-
     @Column(name = "medi_stock")
     private int stock;
 

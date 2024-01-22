@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
 import {MenuComponent} from "./components/menu/menu.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import { CreatePatientComponent } from './components/create-patient/create-patient.component';
+import { CreateClientComponent } from './components/create-client/create-client.component';
 import { MeteoComponent } from './components/meteo/meteo.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatePatientComponent,
+    CreateClientComponent,
     MeteoComponent,
   ],
     imports: [

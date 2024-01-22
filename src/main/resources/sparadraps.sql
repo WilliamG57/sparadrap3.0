@@ -30,3 +30,12 @@ INSERT INTO categorie (cat_id,cat_nom) VALUES (4,'viagra');
 INSERT INTO client (cli_secu,cli_datenaissance,per_id,spe_id,med_id,mut_id) VALUES ('123456789123456','1988-08-01',1,7,4,1);
 INSERT INTO client (cli_secu,cli_datenaissance,per_id,spe_id,med_id,mut_id) VALUES ('234567891234567','2000-03-01',2,8,5,2);
 INSERT INTO client (cli_secu,cli_datenaissance,per_id,spe_id,med_id,mut_id) VALUES ('345678912345678','1958-02-01',3,9,6,3);
+
+INSERT INTO medicament (medi_id, medi_nom, medi_prix, medi_stock, cat_id)
+VALUES (1, "doliprane", 4.50, 50, 1);
+INSERT INTO medicament (medi_id, medi_nom, medi_prix, medi_stock, cat_id)
+VALUES (2, "millepertuis", 7.90, 50, 2);
+INSERT INTO medicament (medi_id, medi_nom, medi_prix, medi_stock, cat_id)
+VALUES (3, "collyre", 3.39, 50, 3);
+INSERT INTO medicament (medi_id, medi_nom, medi_prix, medi_stock, cat_id)
+VALUES (4, "sildenafil", 9.99, 50, 4);
