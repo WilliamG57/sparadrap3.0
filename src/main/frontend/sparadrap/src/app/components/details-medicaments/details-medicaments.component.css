@@ -1,0 +1,19 @@
+.medicaments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.medicaments-table th,
+.medicaments-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.medicaments-table th {
+  background-color: #f2f2f2;
+}
+
+.medicaments-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

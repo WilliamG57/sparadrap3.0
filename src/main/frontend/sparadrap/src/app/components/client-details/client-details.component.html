@@ -18,7 +18,7 @@
 <input type="tel" id="telephone" [(ngModel)]="selectedClient.telephone" [disabled]="!isEditable">
 <br>
 <label for="medecin">Médecin :</label>
-<input type="text" id="medecin" [(ngModel)]="selectedClient.medecinNom">
+<input type="text" id="medecin" [(ngModel)]="selectedClient.medecinNom" [disabled]="!isEditable">
 
 <button (click)="modifyClient()">Modifier</button>
 <button (click)="deleteClient(selectedClientId)">Supprimer</button>

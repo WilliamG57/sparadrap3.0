@@ -30,14 +30,22 @@ public class MedicamentService {
         return medicamentRepository.findAll();
     }
 
-    public Medicament updatedMedicament(Long id, Medicament updatedMedicament) {
+    public Medicament updateMedicament(Long id, Medicament updateMedicament) {
         if (medicamentRepository.existsById(id)) {
-            updatedMedicament.setMedi_id(id);
-            return medicamentRepository.save(updatedMedicament);
+            updateMedicament.setMedi_id(id);
+            return medicamentRepository.save(updateMedicament);
         } else {
             // Gérer le cas où le medicament n'existe pas
             return null;
         }
+    }
+
+    public boolean deleteMedicament(Long id) {
+        if (medicamentRepository.existsById(id)) {
+            medicamentRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 

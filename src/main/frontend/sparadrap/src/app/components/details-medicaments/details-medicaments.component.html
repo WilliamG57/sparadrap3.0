@@ -1,1 +1,29 @@
-<p>details-medicaments works!</p>
+<h1>Détails des Médicaments</h1>
+
+<table class="medicaments-table">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Prix</th>
+    <th>Stock</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let medicament of medicaments">
+    <td>
+      <input type="text" [(ngModel)]="medicament.nom" [disabled]="!medicament.isEditable">
+    </td>
+    <td>
+      <input type="number" [(ngModel)]="medicament.prix" [disabled]="!medicament.isEditable">
+    </td>
+    <td>
+      <input type="number" [(ngModel)]="medicament.stock" [disabled]="!medicament.isEditable">
+    </td>
+    <td>
+      <button (click)="toggleEdit(medicament)">Modifier</button>
+      <button (click)="saveMedicament(medicament)" *ngIf="medicament.isEditable">Sauvegarder</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
