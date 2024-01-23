@@ -23,7 +23,7 @@ select {
   color: #333;
 }
 
-input[type="text"] {
+input[type="text"], input[type="tel"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -34,7 +34,7 @@ input[type="text"] {
   transition: border-color 0.3s;
 }
 
-input[type="text"][disabled] {
+input[type="text"][disabled], input[type="tel"][disabled] {
   background-color: #eee;
   border-color: #eee;
 }

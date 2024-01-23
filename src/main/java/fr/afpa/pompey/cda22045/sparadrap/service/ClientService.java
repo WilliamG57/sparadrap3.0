@@ -3,6 +3,9 @@ package fr.afpa.pompey.cda22045.sparadrap.service;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.*;
 import fr.afpa.pompey.cda22045.sparadrap.repository.ClientRepository;
+import fr.afpa.pompey.cda22045.sparadrap.repository.MedecinRepository;
+import fr.afpa.pompey.cda22045.sparadrap.repository.MutuelleRepository;
+import fr.afpa.pompey.cda22045.sparadrap.repository.SpecialisteRepository;
 import fr.afpa.pompey.cda22045.sparadrap.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +19,31 @@ public class ClientService extends PersonneService {
 
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private MedecinRepository medecinRepository;
+    @Autowired
+    private SpecialisteRepository specialisteRepository;
+    @Autowired
+    private MutuelleRepository mutuelleRepository;
 
     public ClientService() {
     }
 
     public Client save(Client client) throws MyException {
         validate(client);
+
+        Long medecinId = client.getMedecinId();
+        Long specialisteId = client.getSpecialisteId();
+        Long mutuelleId = client.getMutuelleId();
+
+        Medecin medecin = (medecinId != null) ? medecinRepository.findById(medecinId).orElse(null) : null;
+        Specialiste specialiste = (specialisteId != null) ? specialisteRepository.findById(specialisteId).orElse(null) : null;
+        Mutuelle mutuelle = (mutuelleId != null) ? mutuelleRepository.findById(mutuelleId).orElse(null) : null;
+
+        client.setMedecin(medecin);
+        client.setSpecialiste(specialiste);
+        client.setMutuelle(mutuelle);
+
         return clientRepository.save(client);
     }
 

@@ -39,8 +39,9 @@ export class CreateClientComponent implements OnInit {
     })
   }
 
-  onSubmit(): void{
+  onSubmit(): void {
     this.clientService.createClient(this.client).subscribe({
+
       next: (data) => {
         console.log("Client créer avec succès: ", data)
       },
@@ -48,5 +49,6 @@ export class CreateClientComponent implements OnInit {
         console.error("Erreur lors de la création du client: ", error)
       }
     })
+    console.log(this.client)
   }
 }

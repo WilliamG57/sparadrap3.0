@@ -32,6 +32,15 @@ public class Client extends Personne {
     private Specialiste specialiste;
 
 
+    @Transient
+    private Long medecinId;
+
+    @Transient
+    private Long specialisteId;
+
+    @Transient
+    private Long mutuelleId;
+
     public Client(String nom, String prenom, String adresse, String codePostal, String ville,
                   String telephone, String email, String securiteSocial, String dateNaissance,
                   long mutuelle, long medecin, long specialiste) {

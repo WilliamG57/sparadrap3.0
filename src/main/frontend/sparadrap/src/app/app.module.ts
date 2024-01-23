@@ -9,12 +9,14 @@ import {FooterComponent} from "./components/footer/footer.component";
 import { CreateClientComponent } from './components/create-client/create-client.component';
 import { MeteoComponent } from './components/meteo/meteo.component';
 import {FormsModule} from "@angular/forms";
+import { DetailsMedicamentsComponent } from './components/details-medicaments/details-medicaments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateClientComponent,
     MeteoComponent,
+    DetailsMedicamentsComponent,
   ],
     imports: [
         BrowserModule,

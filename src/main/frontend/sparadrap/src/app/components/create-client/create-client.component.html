@@ -47,21 +47,21 @@
 
   <div class="form-group">
     <label for="medecin">Médecin</label>
-    <select id="medecin" name="medecin">
+    <select id="medecin" name="medecin" [(ngModel)]="client.medecinId">
       <option *ngFor="let medecin of medecins" [value]="medecin.per_id">{{ medecin.nom }}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="specialiste">Spécialiste</label>
-    <select id="specialiste" name="specialiste">
+    <select id="specialiste" name="specialiste" [(ngModel)]="client.specialisteId">
       <option *ngFor="let specialiste of specialistes" [value]="specialiste.per_id">{{ specialiste.nom }}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="mutuelle">Mutuelle</label>
-    <select id="mutuelle" name="mutuelle">
+    <select id="mutuelle" name="mutuelle" [(ngModel)]="client.mutuelleId">
       <option *ngFor="let mutuelle of mutuelles" [value]="mutuelle.mut_id">{{ mutuelle.nom }}</option>
 
     </select>

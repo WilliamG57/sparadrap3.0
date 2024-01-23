@@ -2,6 +2,7 @@ package fr.afpa.pompey.cda22045.sparadrap.controller;
 
 import fr.afpa.pompey.cda22045.sparadrap.model.Client;
 import fr.afpa.pompey.cda22045.sparadrap.service.ClientService;
+import fr.afpa.pompey.cda22045.sparadrap.utils.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,12 @@ public class ClientController {
     @PutMapping("/{id}")
     public Client updateClient(@PathVariable Long id, @RequestBody Client updateClient) {
         return clientService.updateClient(id, updateClient);
+    }
+
+    @PostMapping
+    public ResponseEntity<Client> createClient(@RequestBody Client newClient) throws MyException {
+        Client createdClient = clientService.save(newClient);
+        return ResponseEntity.ok(createdClient);
     }
 
     @DeleteMapping("/{id}")
