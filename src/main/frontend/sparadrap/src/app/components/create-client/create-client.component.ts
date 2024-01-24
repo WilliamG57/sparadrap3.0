@@ -44,6 +44,7 @@ export class CreateClientComponent implements OnInit {
 
       next: (data) => {
         console.log("Client créer avec succès: ", data)
+        alert("Client créer avec succès")
       },
       error: (error) => {
         console.error("Erreur lors de la création du client: ", error)

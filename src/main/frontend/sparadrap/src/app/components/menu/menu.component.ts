@@ -20,9 +20,16 @@ export class MenuComponent {
   constructor(public menuService: MenuService) {
   }
 
-  showSubMenu = false;
+  showSubMenuGestionPatients = false;
+  showSubMenuMedicaments: boolean = false;
 
-  toggleSubMenu(): void {
-    this.showSubMenu = !this.showSubMenu;
+  toggleSubMenuGestionPatients(): void {
+    this.showSubMenuGestionPatients = !this.showSubMenuGestionPatients;
+    this.showSubMenuMedicaments = false;
+  }
+
+  toggleSubMenuMedicament(): void {
+    this.showSubMenuMedicaments = !this.showSubMenuMedicaments;
+    this.showSubMenuGestionPatients = false;
   }
 }

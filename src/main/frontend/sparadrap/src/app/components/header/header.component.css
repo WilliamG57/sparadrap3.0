@@ -7,10 +7,11 @@ header{
   display: flex;
   align-items: center;
   height: 200px;
-  background-color: #a19999;
+  background-color: cyan;
   border-radius: 20px;
   h1{
-    color: green;
+    /*color: green;*/
+    color: purple;
     font-size: 70px;
     margin-left: 25%;
   }

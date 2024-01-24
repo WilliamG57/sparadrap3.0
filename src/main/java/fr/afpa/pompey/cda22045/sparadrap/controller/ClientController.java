@@ -28,8 +28,8 @@ public class ClientController {
 
     @PostMapping
     public ResponseEntity<Client> createClient(@RequestBody Client newClient) throws MyException {
-        Client createdClient = clientService.save(newClient);
-        return ResponseEntity.ok(createdClient);
+        Client createClient = clientService.save(newClient);
+        return ResponseEntity.ok(createClient);
     }
 
     @DeleteMapping("/{id}")

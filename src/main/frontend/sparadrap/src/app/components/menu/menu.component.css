@@ -14,7 +14,7 @@
 .list_menu_choice {
   margin: 0 15px;
   text-align: center;
-  background-color: #a19999;
+  background-color: cyan;
   border-radius: 20px;
   padding: 10px 20px 10px 20px;
 }
@@ -26,7 +26,8 @@
 }
 
 .list_menu_choice svg {
-  fill: green;
+  /*fill: green;*/
+  fill: purple;
   margin-bottom: 5px;
 }
 

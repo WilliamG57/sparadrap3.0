@@ -1,0 +1,25 @@
+<form class="medicament-form" (submit)="onSubmit()">
+  <div class="form-group">
+    <label>Nom</label>
+    <input type="text" [(ngModel)]="medicament.nom" placeholder="Nom du médicament" name="nom">
+  </div>
+
+  <div class="form-group">
+    <label>Prix</label>
+    <input type="text" [(ngModel)]="medicament.prix" placeholder="Prix à l'unité du médicament" name="prenom">
+  </div>
+
+  <div class="form-group">
+    <label>Stock</label>
+    <input type="text" [(ngModel)]="medicament.stock" placeholder="Stock actuel du médicament" name="telephone">
+  </div>
+
+  <div class="form-group">
+    <label for="medecin">Catégorie</label>
+    <select id="medecin" name="medecin" [(ngModel)]="medicament.categorieId">
+      <option *ngFor="let categorie of categories" [value]="categorie.cat_id">{{ categorie.nom }}</option>
+    </select>
+  </div>
+
+  <button type="submit">Soumettre</button>
+</form>

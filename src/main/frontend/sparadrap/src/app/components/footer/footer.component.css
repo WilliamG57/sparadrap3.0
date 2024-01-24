@@ -1,8 +1,10 @@
 .footer {
-  background-color: #a19999;
+  /*background-color: #a19999;*/
+  background-color: cyan;
   border-radius: 20px;
-  color: white;
+  color: #333;
   text-align: center;
+  margin-top: 20px;
   padding: 20px 0;
   font-size: 16px;
 }

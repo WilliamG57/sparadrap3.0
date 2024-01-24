@@ -71,9 +71,7 @@ export class ClientDetailsComponent implements OnInit {
     })
   }
 
-  loadClients()
-    :
-    void {
+  loadClients(): void {
     this.clientService.getClients().subscribe({
       next: (data) => this.clients = data,
       error: (error) => console.error('Erreur lors du chargement des clients', error)
@@ -81,11 +79,7 @@ export class ClientDetailsComponent implements OnInit {
   }
 
 //Suppression d'un client
-  deleteClient(clientId
-                 :
-                 number | undefined
-  ):
-    void {
+  deleteClient(clientId: number | undefined): void {
     const confirmation = window.confirm("Êtes-vous sûr de vouloir supprimer le client? ")
 
     if (confirmation) {
@@ -100,9 +94,7 @@ export class ClientDetailsComponent implements OnInit {
   }
 
 //Condition pour les champs éditable ou non
-  toggleEdit()
-    :
-    void {
+  toggleEdit(): void {
     this.isEditable = !this.isEditable;
   }
 }

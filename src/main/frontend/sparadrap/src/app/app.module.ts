@@ -10,6 +10,7 @@ import { CreateClientComponent } from './components/create-client/create-client.
 import { MeteoComponent } from './components/meteo/meteo.component';
 import {FormsModule} from "@angular/forms";
 import { DetailsMedicamentsComponent } from './components/details-medicaments/details-medicaments.component';
+import { CreateMedicamentComponent } from './components/create-medicament/create-medicament.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DetailsMedicamentsComponent } from './components/details-medicaments/de
     CreateClientComponent,
     MeteoComponent,
     DetailsMedicamentsComponent,
+    CreateMedicamentComponent,
   ],
     imports: [
         BrowserModule,

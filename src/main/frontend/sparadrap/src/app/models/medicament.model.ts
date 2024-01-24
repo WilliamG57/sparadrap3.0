@@ -3,6 +3,7 @@ export class Medicament {
   nom: string;
   prix: number;
   stock: number;
+  categorieId : number;
   isEditable?: boolean;
 
   constructor() {
@@ -10,5 +11,6 @@ export class Medicament {
     this.nom = '';
     this.prix = 0;
     this.stock = 0
+    this.categorieId= 0;
   }
 }

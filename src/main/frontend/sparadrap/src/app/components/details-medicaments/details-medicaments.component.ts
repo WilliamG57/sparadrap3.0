@@ -29,7 +29,7 @@ export class DetailsMedicamentsComponent implements OnInit {
   saveMedicament(medicament: Medicament): void {
     this.medicamentService.updateMedicaments(medicament).subscribe({
       next: (response) => {
-        console.log("Client mis à jours");
+        console.log("Médicament mis à jours");
         medicament.isEditable = false;
       },
       error: (error) => {

@@ -18,5 +18,5 @@ public class CategorieMedi {
     private long cat_id;
 
     @Column(name = "cat_nom", columnDefinition = "VARCHAR(255)")
-    private String categorie;
+    private String nom;
 }
