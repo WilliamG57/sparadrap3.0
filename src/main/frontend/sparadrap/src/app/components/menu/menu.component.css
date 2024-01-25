@@ -14,20 +14,21 @@
 .list_menu_choice {
   margin: 0 15px;
   text-align: center;
-  background-color: cyan;
+  background-color: #03a0c1;
   border-radius: 20px;
   padding: 10px 20px 10px 20px;
 }
 
 .list_menu_choice a {
-  color: #333;
+  /*color: #333;*/
+  color: rgb(107, 198, 0);
   text-decoration: none;
   display: block;
 }
 
 .list_menu_choice svg {
   /*fill: green;*/
-  fill: purple;
+  fill: rgb(107, 198, 0);
   margin-bottom: 5px;
 }
 
@@ -36,6 +37,5 @@
 }
 
 .title_choice {
-  font-size: 20px;
   margin: 5px 0 0;
 }

@@ -21,6 +21,7 @@
     </td>
     <td>
       <button (click)="toggleEdit(medicament)">Modifier</button>
+      <button (click)="deleteMedicament(medicament.medi_id)">Supprimer</button>
       <button (click)="saveMedicament(medicament)" *ngIf="medicament.isEditable">Sauvegarder</button>
     </td>
   </tr>

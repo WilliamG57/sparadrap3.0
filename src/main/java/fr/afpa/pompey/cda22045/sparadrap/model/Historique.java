@@ -20,7 +20,7 @@ public class Historique {
     private Medecin medecin;
 
     @ManyToOne
-    private Medicament medicament;
+    private Commande commande;
 
     @ManyToOne
     private Specialiste specialiste;

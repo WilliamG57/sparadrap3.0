@@ -7,10 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LigneArticle {
+public class Commande {
 
     private Medicament medicament;
-    private double prix;
     private int quantite;
 
+    public Commande(Medicament medicament, double prix, int quantite) {
+    }
 }

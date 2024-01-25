@@ -12,19 +12,19 @@ export class MedicamentService {
   private apiUrl = 'http://localhost:8080/medicaments';
   constructor(private http: HttpClient) { }
 
-  getMedicaments(): Observable<any[]> {
+  getMedicament(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  updateMedicaments(medicament: any): Observable<any> {
+  updateMedicament(medicament: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${medicament.medi_id}`, medicament)
   }
 
-  createMedicaments(medicament: Medicament): Observable<Medicament> {
+  createMedicament(medicament: Medicament): Observable<Medicament> {
     return this.http.post<Medicament>(this.apiUrl,medicament);
   }
 
-  deleteMedicaments(id: number | undefined) {
+  deleteMedicament(id: number | undefined) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

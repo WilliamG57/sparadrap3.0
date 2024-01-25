@@ -43,7 +43,7 @@ export class CreateClientComponent implements OnInit {
     this.clientService.createClient(this.client).subscribe({
 
       next: (data) => {
-        console.log("Client créer avec succès: ", data)
+        console.log("Client créé avec succès: ", data)
         alert("Client créer avec succès")
       },
       error: (error) => {

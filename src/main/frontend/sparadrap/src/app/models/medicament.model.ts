@@ -1,5 +1,5 @@
 export class Medicament {
-  id: number;
+  medi_id: number;
   nom: string;
   prix: number;
   stock: number;
@@ -7,7 +7,7 @@ export class Medicament {
   isEditable?: boolean;
 
   constructor() {
-    this.id = 0;
+    this.medi_id = 0;
     this.nom = '';
     this.prix = 0;
     this.stock = 0

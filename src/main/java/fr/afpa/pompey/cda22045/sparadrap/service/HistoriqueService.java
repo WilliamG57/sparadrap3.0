@@ -33,7 +33,7 @@ public class HistoriqueService {
         }
         h.setSpecialiste(p.getSpecialiste());
         h.setOrdonnance(p.getOrdonnance());
-        for (LigneArticle la : p.getLigneArticles()) {
+        for (Commande la : p.getCommandes()) {
             h.setMedicament(la.getMedicament());
             h.setPrix(la.getPrix());
             h.setQuantite(la.getQuantite());

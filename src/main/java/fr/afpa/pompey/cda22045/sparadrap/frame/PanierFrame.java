@@ -55,7 +55,7 @@ public class PanierFrame extends JFrame {
                 Historique h = historiqueService.transfertPanierHistorique(currentPanier);
                 try {
                     historiqueService.ajoutHistorique(h);
-                    pa.getLigneArticles().clear();
+                    pa.getCommandes().clear();
                 } catch (MyException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -69,7 +69,7 @@ public class PanierFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (tablePanier.getSelectedRow() != -1) {
                     int ligneSelection = tablePanier.getSelectedRow();
-                    pa.getLigneArticles().remove(ligneSelection);
+                    pa.getCommandes().remove(ligneSelection);
                     model.removeRow(ligneSelection);
                 }
             }
@@ -84,7 +84,7 @@ public class PanierFrame extends JFrame {
 
     public void tablePanier() {
         model = new DefaultTableModel(new String[]{"Médicament", "Quantité", "Prix/u"}, 0);
-        for (LigneArticle ligneArticles : currentPanier.getLigneArticles()) {
+        for (Commande ligneArticles : currentPanier.getCommandes()) {
             model.addRow(new Object[]{
                     ligneArticles.getMedicament(),
                     ligneArticles.getQuantite(),

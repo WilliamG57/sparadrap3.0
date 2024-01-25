@@ -16,10 +16,17 @@ export class DetailsMedicamentsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.medicamentService.getMedicaments().subscribe((data: any[]) => {
+    this.medicamentService.getMedicament().subscribe((data: any[]) => {
       this.medicaments = data.map(medicament => ({...medicament, isEditable: false}));
+      console.log("Médicaments chargés :", this.medicaments);
       console.log(data)
     })
+  }
+
+  loadMedicaments(): void {
+    this.medicamentService.getMedicament().subscribe((data) => {
+      this.medicaments = data
+    });
   }
 
   toggleEdit(medicament: Medicament): void {
@@ -27,7 +34,7 @@ export class DetailsMedicamentsComponent implements OnInit {
   }
 
   saveMedicament(medicament: Medicament): void {
-    this.medicamentService.updateMedicaments(medicament).subscribe({
+    this.medicamentService.updateMedicament(medicament).subscribe({
       next: (response) => {
         console.log("Médicament mis à jours");
         medicament.isEditable = false;
@@ -36,5 +43,15 @@ export class DetailsMedicamentsComponent implements OnInit {
         console.error("Erreur lors de la mise à jours")
       }
     })
+  }
+
+  deleteMedicament(medi_id: number): void {
+    const confirmation = window.confirm("Etes-vous sûr de vouloir supprimer ce médicament ?")
+    if (confirmation) {
+      this.medicamentService.deleteMedicament(medi_id).subscribe(() => {
+        console.log("Médicament supprimé avec succès")
+        this.loadMedicaments();
+      })
+    }
   }
 }

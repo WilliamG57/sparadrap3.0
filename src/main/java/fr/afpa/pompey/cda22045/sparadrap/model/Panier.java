@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @NoArgsConstructor
 public class Panier {
 
-    private ArrayList<LigneArticle> ligneArticles = new ArrayList<>();
+    private ArrayList<Commande> commandes = new ArrayList<>();
 
     private String nom;
     private String date;

@@ -8,14 +8,15 @@ import {CategorieMediService} from "../../services/categorie-service/categorieMe
   templateUrl: './create-medicament.component.html',
   styleUrls: ['./create-medicament.component.css']
 })
-export class CreateMedicamentComponent implements OnInit{
+export class CreateMedicamentComponent implements OnInit {
   medicament: Medicament = new Medicament();
   categories: any[] = [];
 
   constructor(
     private medicamentService: MedicamentService,
     private categorieMediService: CategorieMediService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.categorieMediService.getCategorieMedi().subscribe({
@@ -25,9 +26,14 @@ export class CreateMedicamentComponent implements OnInit{
   }
 
   onSubmit(): void {
-    this.medicamentService.createMedicaments(this.medicament).subscribe({
-      next: (data) => console.log('Médicament créé avec succès', data),
-      error: (error) => console.error('Erreur lors de la création du médicament', error)
+    this.medicamentService.createMedicament(this.medicament).subscribe({
+      next: (data) => {
+        console.log('Médicament créé avec succès', data)
+        alert("Médicament créé avec succès")
+      },
+      error: (error) => {
+        console.error('Erreur lors de la création du médicament', error)
+      }
     });
   }
 }

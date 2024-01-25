@@ -37,7 +37,7 @@ public class PanierService {
     }
 
     public void ajoutLigneArticle(Medicament medicament, int quantite, double prix) throws MyException {
-        panier.getLigneArticles().add(new LigneArticle(medicament, prix, quantite));
+        panier.getCommandes().add(new Commande(medicament, prix, quantite));
     }
 
     public void supprimerPanier() {
