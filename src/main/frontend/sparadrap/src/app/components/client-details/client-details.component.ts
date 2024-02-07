@@ -24,7 +24,15 @@ export class ClientDetailsComponent implements OnInit {
     nom?: string;
     prenom?: string;
     adresse?: string;
+    codePostal?: string;
+    ville?: string;
+    email?: string
+    secuSociale?: string
+    dateNaissance?: string
     telephone?: string;
+    medecinId?: number;
+    specialisteId?: number;
+    mutuelleId?: number;
     medecinNom?: string
   } = {};
 
@@ -48,8 +56,16 @@ export class ClientDetailsComponent implements OnInit {
         nom: client.nom,
         prenom: client.prenom,
         adresse: client.adresse,
+        codePostal: client.codePostal,
+        ville: client.ville,
         telephone: client.telephone,
-        medecinNom: client.medecin.nom
+        email: client.email,
+        secuSociale: client.secuSociale,
+        dateNaissance: client.dateNaissance,
+        medecinId: client.medecin ? client.medecin.per_id : undefined,
+        specialisteId: client.specialiste ? client.specialiste.per_id : undefined,
+        mutuelleId: client.mutuelle ? client.mutuelle.mut_id : undefined,
+        medecinNom: client.medecin ? client.medecin.nom : undefined,
       };
     } else {
       this.selectedClient = {};
@@ -63,16 +79,20 @@ export class ClientDetailsComponent implements OnInit {
 
 //Sauvegarde des modifications
   saveClient(): void {
-    this.clientService.updateClient(this.selectedClient).subscribe({
-      next: (response) => {
-        console.log("Client mis à jours");
-        this.isEditable = false;
-        this.loadClients()
-      },
-      error: (error) => {
-        console.error("Erreur lors de la mise à jours")
-      }
-    })
+    if (this.selectedClient && this.selectedClient.per_id) {
+      this.clientService.updateClient(this.selectedClient).subscribe({
+        next: (response) => {
+          console.log("Client mis à jour", response);
+          this.isEditable = false;
+          this.loadClients(); // Rechargez les clients pour voir la mise à jour
+        },
+        error: (error) => {
+          console.error("Erreur lors de la mise à jour", error);
+        }
+      });
+    } else {
+      console.error("ID du client manquant ou données du client incomplètes");
+    }
   }
 
   loadClients(): void {
