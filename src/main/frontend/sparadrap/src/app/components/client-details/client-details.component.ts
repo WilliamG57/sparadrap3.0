@@ -20,6 +20,7 @@ export class ClientDetailsComponent implements OnInit {
   clients: any[] = [];
   selectedClientId: number | undefined;
   selectedClient: {
+    per_id?: number;
     nom?: string;
     prenom?: string;
     adresse?: string;
@@ -40,8 +41,10 @@ export class ClientDetailsComponent implements OnInit {
 
   onClientSelect(): void {
     const client = this.clients.find(c => c.per_id == this.selectedClientId);
+    console.log(client);
     if (client) {
       this.selectedClient = {
+        per_id: client.per_id,
         nom: client.nom,
         prenom: client.prenom,
         adresse: client.adresse,
@@ -64,6 +67,7 @@ export class ClientDetailsComponent implements OnInit {
       next: (response) => {
         console.log("Client mis à jours");
         this.isEditable = false;
+        this.loadClients()
       },
       error: (error) => {
         console.error("Erreur lors de la mise à jours")
@@ -81,7 +85,6 @@ export class ClientDetailsComponent implements OnInit {
 //Suppression d'un client
   deleteClient(clientId: number | undefined): void {
     const confirmation = window.confirm("Êtes-vous sûr de vouloir supprimer le client? ")
-
     if (confirmation) {
       this.clientService.deleteClient(clientId).subscribe({
         next: () => {

@@ -1,6 +1,5 @@
 package fr.afpa.pompey.cda22045.sparadrap;
 
-import fr.afpa.pompey.cda22045.sparadrap.frame.AccueilFrame;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

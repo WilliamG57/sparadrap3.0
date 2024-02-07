@@ -10,19 +10,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Commande {
+public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long com_id;
+    private long art_id;
 
     @ManyToOne
-    @JoinColumn(name = "per_id")
-    private Client client;
+    @JoinColumn(name = "medi_id")
+    private Medicament medicament;
 
     @Column
-    private String date;
-
-    @Column
-    private Boolean Ordonnance;
+    private int quantite;
 }

@@ -1,4 +1,5 @@
 export class Client {
+  per_id?: number;
   nom: string;
   prenom: string;
   telephone: string;

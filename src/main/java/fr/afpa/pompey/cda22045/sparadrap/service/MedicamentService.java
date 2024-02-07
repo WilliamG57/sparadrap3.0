@@ -47,21 +47,4 @@ public class MedicamentService {
         }
         return false;
     }
-
-
-
-//    public List<Medicament> findAll() {
-//        try {
-//            List<Medicament> medicaments = medicamentDAO.findAll();
-//            for (Medicament medi : medicaments) {
-//                CategorieMedi cm = categorieMediDAO.find(medi.getCategorieMedicament().getCat_id());
-//                if (cm != null) {
-//                    medi.setCategorieMedicament(cm);
-//                }
-//            }
-//            return medicaments;
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 }

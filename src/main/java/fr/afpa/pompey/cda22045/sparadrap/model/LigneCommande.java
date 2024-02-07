@@ -10,33 +10,17 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Historique {
+public class LigneCommande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long his_id;
+    private long ligne_id;
 
     @ManyToOne
-    private Medecin medecin;
-
-    @ManyToOne
+    @JoinColumn(name = "com_id")
     private Commande commande;
 
     @ManyToOne
-    private Specialiste specialiste;
-
-    @Column
-    private String nom;
-
-    @Column
-    private String date;
-
-    @Column
-    private int quantite;
-
-    @Column
-    private double prix;
-
-    @Column
-    private Boolean Ordonnance;
+    @JoinColumn(name = "art_id")
+    private Article article;
 }
