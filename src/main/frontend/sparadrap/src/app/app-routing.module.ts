@@ -5,12 +5,14 @@ import {CreateClientComponent} from "./components/create-client/create-client.co
 import {MeteoComponent} from "./components/meteo/meteo.component";
 import {DetailsMedicamentsComponent} from "./components/details-medicaments/details-medicaments.component";
 import {CreateMedicamentComponent} from "./components/create-medicament/create-medicament.component";
+import {AchatMedicamentComponent} from "./components/achat-medicament/achat-medicament.component";
 
 const routes: Routes = [
   {path: 'client-details', component: ClientDetailsComponent},
   {path: 'create-patient', component: CreateClientComponent},
   {path: 'details-medicaments', component: DetailsMedicamentsComponent},
   {path: 'create-medicament', component: CreateMedicamentComponent},
+  {path: 'achat-medicament', component: AchatMedicamentComponent},
   {path: 'meteo', component: MeteoComponent}
 ];
 
