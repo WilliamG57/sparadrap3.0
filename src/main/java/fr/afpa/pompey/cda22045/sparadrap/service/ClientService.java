@@ -58,6 +58,11 @@ public class ClientService extends PersonneService {
     public Client updateClient(Long id, Client updatedClient) {
         if (clientRepository.existsById(id)) {
             updatedClient.setPer_id(id);
+            try {
+                save(updatedClient);
+            } catch (MyException e) {
+                throw new RuntimeException(e);
+            }
             return clientRepository.save(updatedClient);
         } else {
             return null;
