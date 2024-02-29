@@ -12,12 +12,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of panier">
-      <td>{{ item.article.medicament.nom }}</td>
+      <td>{{ getMedicament(item.article.medicamentId)?.nom }}</td>
 <!--      <td>-->
 <!--        <input type="number" [(ngModel)]="item.quantite" min="1" (change)="updateQuantite(item)">-->
 <!--      </td>-->
       <td>{{ item.article.medicament.prix | currency }}</td>
-      <td>{{ item.quantite * item.article.medicament.prix | currency }}</td>
+      <td>{{ item.article.quantite * item.article.medicament.prix | currency }}</td>
 <!--      <td>-->
 <!--        <button class="btn-delete" (click)="retirerDuPanier(item.article.art_id)">Retirer</button>-->
 <!--      </td>-->

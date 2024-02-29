@@ -17,6 +17,10 @@ export class MedicamentService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getMedicamentById(id: number): Observable<Medicament> {
+    return this.http.get<Medicament>(`${this.apiUrl}/${id}`);
+  }
+
   updateMedicament(medicament: Medicament): Observable<Medicament> {
     return this.http.put<Medicament>(`${this.apiUrl}/${medicament.medi_id}`, medicament)
   }
