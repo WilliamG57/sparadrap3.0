@@ -1,0 +1,37 @@
+<div class="panier-container">
+  <h2>Votre Panier</h2>
+  <table *ngIf="panier.length > 0; else emptyCart">
+    <thead>
+    <tr>
+      <th>Nom du Produit</th>
+      <th>Quantité</th>
+      <th>Prix Unit.</th>
+      <th>Total</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of panier">
+      <td>{{ item.article.medicament.nom }}</td>
+<!--      <td>-->
+<!--        <input type="number" [(ngModel)]="item.quantite" min="1" (change)="updateQuantite(item)">-->
+<!--      </td>-->
+      <td>{{ item.article.medicament.prix | currency }}</td>
+      <td>{{ item.quantite * item.article.medicament.prix | currency }}</td>
+<!--      <td>-->
+<!--        <button class="btn-delete" (click)="retirerDuPanier(item.article.art_id)">Retirer</button>-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3">Total</td>
+      <td colspan="2">{{ getTotal() | currency }}</td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <ng-template #emptyCart>
+    <p>Votre panier est vide.</p>
+  </ng-template>
+</div>

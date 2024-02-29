@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import { DetailsMedicamentsComponent } from './components/details-medicaments/details-medicaments.component';
 import { CreateMedicamentComponent } from './components/create-medicament/create-medicament.component';
 import { AchatMedicamentComponent } from './components/achat-medicament/achat-medicament.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AchatMedicamentComponent } from './components/achat-medicament/achat-me
     DetailsMedicamentsComponent,
     CreateMedicamentComponent,
     AchatMedicamentComponent,
+    PanierComponent,
   ],
     imports: [
         BrowserModule,

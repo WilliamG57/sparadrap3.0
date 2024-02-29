@@ -1,1 +1,43 @@
-<p>achat-medicament works!</p>
+<div class="achat-container">
+  <h2>Achat de médicament</h2>
+
+  <div class="form-group" *ngIf="ordonnance">
+    <label for="client">Client</label>
+    <select id="client" [(ngModel)]="selectedClient">
+      <option *ngFor="let client of clients" [value]="client.per_id">{{ client.nom }}</option>
+    </select>
+  </div>
+
+  <div class="form-group" *ngIf="ordonnance">
+    <label for="medecin">Médecin</label>
+    <select id="medecin" [(ngModel)]="selectedMedecin">
+      <option *ngFor="let medecin of medecins" [value]="medecin.per_id">{{ medecin.nom }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="medicament">Médicament</label>
+    <select id="medicament" [(ngModel)]="selectedMedicament">
+      <option *ngFor="let medicament of medicaments" [value]="medicament.medi_id">{{ medicament.nom }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="quantite">Quantité</label>
+    <input id="quantite" type="number" min="1" [(ngModel)]="selectedQuantite">
+  </div>
+
+  <label for="date_achat">Date d'achat:</label>
+  <input type="date" id="date_achat" name="date_achat"  [(ngModel)]="commande.date">
+
+
+  <div class="form-group">
+    <label for="ordonnance">Ordonnance</label>
+    <select id="ordonnance" [(ngModel)]="ordonnance">
+      <option value="true">Oui</option>
+      <option value="false">Non</option>
+    </select>
+  </div>
+
+  <button (click)="ajoutPanier()">Ajouter au Panier</button>
+</div>

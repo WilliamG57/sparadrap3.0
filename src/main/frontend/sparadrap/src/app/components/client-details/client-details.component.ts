@@ -43,7 +43,6 @@ export class ClientDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.clientService.getClients().subscribe((data: any[]) => {
       this.clients = data;
-      console.log(data)
     });
   }
 
